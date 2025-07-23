@@ -33,11 +33,20 @@
                             </td>
 
                             <td>
-                                <form action="{{ route('task.destroy', $task->id) }}" method="post">
-                                    {{ csrf_field() }}
-                                    {{ method_field('DELETE') }}
-                                    <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                </form>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <form action="{{ route('task.destroy', $task->id) }}" method="post" class="form-inline">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <a class="btn btn-warning" href="{{ route('task.edit', $task->id) }}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     @endforeach
